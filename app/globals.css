@@ -1,26 +1,63 @@
 @import "tailwindcss";
+@theme {
+  --color-neutral-900: #163a34;
+  --color-neutral-600: #395852;
+  --color-neutral-300: #d0dcd9;
+  --color-neutral-200: #e0e6e3;
+  --color-neutral-100: #f6f5f1;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-neutral-0: #ffffff;
+
+  --color-orange-500: #fe9f6b;
+  --color-teal-500: #49ac9b;
+  --color-indigo-500: #697ddb;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* TODO: Hacer la tipografía responsiva */
+/* TODO: Hacer archivos de los componentes de UI de react */
+/* TODO: Hacer un commit con los design tokens */
+.preset-1-mobile {
+  @apply text-[52px] leading-[110%] tracking-[-2px] font-extrabold;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.preset-1-tablet {
+  @apply text-[64px] leading-[110%] tracking-[-2px] font-extrabold;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.preset-1 {
+  /* //72/110/-2 */
+  @apply text-[72px] leading-[110%] tracking-[-2px] font-extrabold;
+}
+/* TODO: Aplicar las variables de fuente para Tailwind, pero a partir de NextJS. */
+.preset-2-mobile {
+  @apply text-[40px] leading-[120%] tracking-[-2px] font-extrabold;
+}
+.preset-2 {
+  @apply text-[48px] leading-[120%] tracking-[-2px] font-extrabold;
+}
+.preset-3 {
+  @apply text-[32px] leading-[130%] tracking-[-1px] font-bold;
+}
+.preset-4 {
+  @apply text-[24px] leading-[130%] tracking-[-1px] font-bold;
+}
+.preset-5 {
+  @apply text-[20px] leading-[140%] tracking-[-0.5px] font-bold;
+}
+.preset-6 {
+  /* @apply; */
+  @apply text-[20px] leading-[150%] tracking-[-0.4px] font-medium;
+}
+.preset-7 {
+  /* @apply; */
+  @apply text-[18px] leading-[150%] tracking-[-0.3px] font-semibold;
+}
+.preset-8 {
+  /* @apply; */
+  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-bold;
+}
+.preset-9 {
+  /* @apply; */
+  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-medium;
+}
+.preset-10 {
+  /* @apply; */
+  @apply text-[14px] leading-[150%] tracking-[-0.3px] font-bold;
 }
