@@ -16,8 +16,6 @@
   --font-nunito-sans: var(--font-nunito-sans);
 }
 /* TODO: Hacer la tipografía responsiva */
-/* TODO: Hacer archivos de los componentes de UI de react */
-/* TODO: Hacer un commit con los design tokens */
 .preset-1-mobile {
   @apply text-[52px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
