@@ -11,53 +11,49 @@
   --color-orange-500: #fe9f6b;
   --color-teal-500: #49ac9b;
   --color-indigo-500: #697ddb;
+
+  --font-nunito: var(--font-nunito);
+  --font-nunito-sans: var(--font-nunito-sans);
 }
 /* TODO: Hacer la tipografía responsiva */
 /* TODO: Hacer archivos de los componentes de UI de react */
 /* TODO: Hacer un commit con los design tokens */
 .preset-1-mobile {
-  @apply text-[52px] leading-[110%] tracking-[-2px] font-extrabold;
+  @apply text-[52px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-1-tablet {
-  @apply text-[64px] leading-[110%] tracking-[-2px] font-extrabold;
+  @apply text-[64px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-1 {
-  /* //72/110/-2 */
-  @apply text-[72px] leading-[110%] tracking-[-2px] font-extrabold;
+  @apply text-[72px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
-/* TODO: Aplicar las variables de fuente para Tailwind, pero a partir de NextJS. */
 .preset-2-mobile {
-  @apply text-[40px] leading-[120%] tracking-[-2px] font-extrabold;
+  @apply text-[40px] leading-[120%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-2 {
-  @apply text-[48px] leading-[120%] tracking-[-2px] font-extrabold;
+  @apply text-[48px] leading-[120%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-3 {
-  @apply text-[32px] leading-[130%] tracking-[-1px] font-bold;
+  @apply text-[32px] leading-[130%] tracking-[-1px] font-bold font-nunito;
 }
 .preset-4 {
-  @apply text-[24px] leading-[130%] tracking-[-1px] font-bold;
+  @apply text-[24px] leading-[130%] tracking-[-1px] font-bold font-nunito;
 }
 .preset-5 {
-  @apply text-[20px] leading-[140%] tracking-[-0.5px] font-bold;
+  @apply text-[20px] leading-[140%] tracking-[-0.5px] font-bold font-nunito;
 }
 .preset-6 {
-  /* @apply; */
-  @apply text-[20px] leading-[150%] tracking-[-0.4px] font-medium;
+  @apply text-[20px] leading-[150%] tracking-[-0.4px] font-medium font-nunito-sans;
 }
 .preset-7 {
-  /* @apply; */
-  @apply text-[18px] leading-[150%] tracking-[-0.3px] font-semibold;
+  @apply text-[18px] leading-[150%] tracking-[-0.3px] font-semibold font-nunito;
 }
 .preset-8 {
-  /* @apply; */
-  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-bold;
+  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-bold font-nunito-sans;
 }
 .preset-9 {
-  /* @apply; */
-  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-medium;
+  @apply text-[16px] leading-[150%] tracking-[-0.3px] font-medium font-nunito-sans;
 }
 .preset-10 {
-  /* @apply; */
-  @apply text-[14px] leading-[150%] tracking-[-0.3px] font-bold;
+  @apply text-[14px] leading-[150%] tracking-[-0.3px] font-bold font-nunito-sans;
 }

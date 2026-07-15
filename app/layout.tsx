@@ -1,19 +1,19 @@
 import { ReactElement } from "react";
-
+import "./globals.css"
 import { Nunito, Nunito_Sans } from "next/font/google";
 const nunito = Nunito({
   subsets: ["latin"],
-  variable: "--nunito"
+  variable: "--font-nunito"
 });
 const nunitoSans = Nunito_Sans(
   {
     subsets: ["latin"],
-    variable: "--nunito-sans"
+    variable: "--font-nunito-sans"
   }
 );
 export default function Layout({ children }: { children: ReactElement }) {
   return <html>
-    <body className={`text-lg ${nunito.className}`}>
+    <body className={`antialiased ${nunito.variable} ${nunitoSans.variable}`}>
       {children}
     </body>
   </html>
