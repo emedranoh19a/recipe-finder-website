@@ -1,3 +1,3 @@
 export default function CTAIllustration2() {
-    return <div>CTAIllustration2</div>
+    return <div>Ornamental de cuchillo</div>
 }

@@ -1,3 +1,3 @@
 export default function Line() {
-    return <div>Line</div>
+    return <div>Ornametal, linea aqua ondulada</div>
 }

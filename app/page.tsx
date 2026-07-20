@@ -1,3 +1,6 @@
+import Features from "./sections/Features"
+import Hero from "./sections/Hero"
+import RealLife from "./sections/RealLife"
 import Button from "./ui/Button";
 import Checkbox from "./ui/Checkbox";
 import IconPrimary from "./ui/IconPrimary";
@@ -12,29 +15,39 @@ import SelectButton from "./ui/SelectButton";
 
 // This is the home page.
 export default function Page() {
-
-  return <div className="w-fit mx-center grid place-items-center">
-    {/* .preset-1-mobile {
-  @apply text-[52px] leading-[110%] tracking-[-2px];
+  return (
+    <>
+      <Hero />
+      <Features />
+      <RealLife />
+      
+    </>
+  );
 }
-.preset-1-tablet {
-  @apply text-[64px] leading-[110%] tracking-[-2px];
-}
-.preset-1 {
-  @apply text-[72px] leading-[110%] tracking-[-2px];
-} */}
-    <Logo />
-    <Checkbox />
-    <Button text="Button" />
-    <SearchBar />
-    <SelectButton />
-    <IconPrimary />
-    <IconSecondary />
-    <CTAIllustration1 />
-    <CTAIllustration2 />
-    <Line />
-    <Line1 />
-  </div>
-}
+<div className="mt-20 bg-red-200">
 
-
+      {/* /* <Logo />
+      <Checkbox />
+      <Checkbox />
+      <Checkbox />
+      <Button text="Button" />
+      <SearchBar />
+      <SelectButton />
+      <IconPrimary name="flash"/>
+      <IconPrimary name="carrots"/>
+      <IconPrimary name="search-menu"/>
+      <IconSecondary name="instagram" />
+      <IconSecondary name="bluesky" />
+      <IconSecondary name="tiktok" />
+      <IconSecondary name="down" />
+      <IconSecondary name="arrow-right" />
+      <IconSecondary name="user" />
+      <IconSecondary name="timer" />
+      <IconSecondary name="food" />
+      <IconSecondary name="search" />
+      <IconSecondary name="hamburger" />
+      <CTAIllustration1 />
+      <CTAIllustration2 /> 
+      <Line />
+      <Line1 /> */}
+      </div>

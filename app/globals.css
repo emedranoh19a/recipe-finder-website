@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @theme {
   --color-neutral-900: #163a34;
+  --color-neutral-800: #395852;
   --color-neutral-600: #395852;
+  --color-neutral-400: #d0dcd9;
   --color-neutral-300: #d0dcd9;
   --color-neutral-200: #e0e6e3;
   --color-neutral-100: #f6f5f1;
@@ -16,20 +18,21 @@
   --font-nunito-sans: var(--font-nunito-sans);
 }
 /* TODO: Hacer la tipografía responsiva */
-.preset-1-mobile {
-  @apply text-[52px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
+/* .preset-1-mobile { */
+.preset-1 {
+  @apply text-[52px] sm:text-[64px] lg:text-[72px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
-.preset-1-tablet {
+/* .preset-1-tablet {
   @apply text-[64px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-1 {
   @apply text-[72px] leading-[110%] tracking-[-2px] font-extrabold font-nunito;
-}
-.preset-2-mobile {
+} */
+/* .preset-2-mobile {
   @apply text-[40px] leading-[120%] tracking-[-2px] font-extrabold font-nunito;
-}
+} */
 .preset-2 {
-  @apply text-[48px] leading-[120%] tracking-[-2px] font-extrabold font-nunito;
+  @apply text-[40px] lg:text-[48px] leading-[120%] tracking-[-2px] font-extrabold font-nunito;
 }
 .preset-3 {
   @apply text-[32px] leading-[130%] tracking-[-1px] font-bold font-nunito;
