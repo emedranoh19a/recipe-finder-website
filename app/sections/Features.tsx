@@ -27,7 +27,7 @@ const features: FeatureProps[] = [
 
 export default function Features() {
   return (
-    <section id="features" className="pt-16 sm:py-20 lg:pb-24">
+    <section id="features" className="pt-16 sm:py-20 lg:pb-24 w-full">
       <h2 className="preset-2 text-netural-900 mb-8 sm:mb-12">What you&apos;ll get</h2>
       <ul className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
         {features.map((feature, i) => (

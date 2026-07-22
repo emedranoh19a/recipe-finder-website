@@ -1,3 +1,4 @@
+import CTA from "./sections/CTA";
 import Features from "./sections/Features"
 import Hero from "./sections/Hero"
 import RealLife from "./sections/RealLife"
@@ -20,13 +21,13 @@ export default function Page() {
       <Hero />
       <Features />
       <RealLife />
-      
+      <CTA />
     </>
   );
 }
 <div className="mt-20 bg-red-200">
 
-      {/* /* <Logo />
+  {/* /* <Logo />
       <Checkbox />
       <Checkbox />
       <Checkbox />
@@ -50,4 +51,4 @@ export default function Page() {
       <CTAIllustration2 /> 
       <Line />
       <Line1 /> */}
-      </div>
+</div>
