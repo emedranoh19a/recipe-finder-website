@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "../ui/Button";
 
 export default function CTA() {
@@ -14,8 +15,16 @@ export default function CTA() {
 function Ornamentals() {
     return <>
         {/* Fork */}
-        <div className="bg-red-500 w-[179.13px] h-[231.72px] lg:w-[341.67px] lg:h-[390.23px] bottom-[-56.72px] left-12 lg:bottom-5.75 lg:left-18.25">t</div>
+        <div className="hidden sm:inline-block absolute -z-10 0 w-[179.13px] h-[231.72px] lg:w-[341.67px] lg:h-[390.23px] top-[56.72px] left-12 lg:bottom-5.75 lg:left-18.25">
+            <div className="w-full h-full relative">
+                <Image src="\images\pattern-fork.svg" className="object-contain" alt="" fill />
+            </div>
+        </div>
         {/* Knife */}
-        <div className="bg-red-500 w-[171.78px] lg:w-[338.43] aspect-square -top-12.5 right-[20.78px] lg:top-6 lg:-right-17.5"></div>
+        <div className="hidden sm:inline-block absolute -z-10 w-[171.78px] lg:w-[338.43] aspect-square -top-12.5 right-[20.78px] lg:top-6 lg:-right-17.5">
+            <div className="w-full h-full relative">
+                <Image src="\images\pattern-knife.svg" className="object-contain" alt="" fill />
+            </div>
+        </div>
     </>
 }

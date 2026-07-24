@@ -3,7 +3,7 @@ import { cn } from "../utils/utils";
 
 type IconSecondaryProps = {
   className?: string;
-  name: string;
+  name: "instagram" | "bluesky" | "tiktok" | "down" | "arrow-right" | "user" | "timer" | "food" | "search" | "hamburger";
 };
 export default function IconSecondary({ className, name }: IconSecondaryProps) {
   const containerCn = cn(
