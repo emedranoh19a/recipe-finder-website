@@ -1,11 +1,10 @@
-import Button from "../ui/Button";
-import Logo from "../ui/Logo";
-import { cn } from "../utils/utils";
+import Button from "../../ui/Button";
+import Logo from "../../ui/Logo";
+import { cn } from "../../utils/utils";
+import DesktopNavbarLinks from "./DesktopNavbarLinks";
+import HamburgerMenu from "./HamburgerMenu";
 
-//TODO: Implement a navbar with links and styling
-function NavbarLinks() {
-  return <div className="bg-red-500">Navbar Links</div>;
-}
+
 export default function Navbar() {
   const containerCn = cn(
     "sticky top-0 bg-neutral-100 w-full z-10",
@@ -19,8 +18,9 @@ export default function Navbar() {
     <nav className={containerCn}>
       <div className={contentContainerCn}>
         <Logo />
-        <NavbarLinks />
-        <Button text="Browse recipes" />  
+        <DesktopNavbarLinks />
+        <HamburgerMenu />
+        <Button text="Browse recipes" className="whitespace-nowrap hidden lg:inline-block" />
       </div>
     </nav>
   );

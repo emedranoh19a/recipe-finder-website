@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import MoreRecipes from "./components/MoreRecipes"
-import { RecipeDetails } from "../components/RecipeDetails"
 import { CookingStats } from "../components/CookingStats"
+import List from "../components/List"
 
 //TODO: Make the page dynamic with Supabase data.
 
@@ -42,11 +42,9 @@ const sampleData = {
 export default function Page() {
 
     return <>
-        <div className="bg-lime-700/10">
-
+        <div className="bg-lime-700/10 mb-24 lg:mb-32 flex flex-col lg:flex-row items-start gap-10">
             <RecipeImage />
             <RecipeInfo />
-
         </div>
         <MoreRecipes />
     </>
@@ -54,46 +52,19 @@ export default function Page() {
 
 function RecipeImage() {
     //TODO:
-    return <div className="rounded-[10px] overflow-hidden bg-lime-700/50 w-full aspect-square max-w-145 relative">
+    return <div className="rounded-[10px] overflow-hidden bg-lime-700/50 w-full aspect-square lg:max-w-145 relative mx-auto">
         <Image src="/images/mediterranean-chickpea-salad-large.webp" fill className="object-cover" alt="" />
     </div>
 }
 
-function RecipeInfo({ title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions }) {
-    //  overview:
-    //     "A refreshing, protein-packed salad tossed in a lemon-olive oil dressing.",
-    // servings: 2,
-    // prepMinutes: 10,
-    // cookMinutes: 0,
-    // ingredients: [
-    //     "1 can (400 g) chickpeas, drained & rinsed",
-    //     "1 small cucumber, diced",
-    //     "1 cup cherry tomatoes, halved",
-    //     "1/2 red bell pepper, diced",
-    //     "1/4 red onion, finely chopped",
-    //     "2 Tbsp fresh parsley, chopped",
-    //     "2 Tbsp extra-virgin olive oil",
-    //     "1 Tbsp fresh lemon juice",
-    //     "Sea salt & black pepper to taste",
-    // ],
-    // instructions: [
-    //     "In a large bowl combine chickpeas, cucumber, tomatoes, bell pepper, red onion and parsley.",
-    //     "Drizzle with olive oil and lemon juice.",
-    //     "Season with salt and pepper; toss to coat.",
-    //     "Serve immediately or chill up to 2 days.",
-    // ],
-    return <div>
-        <div>
-
-            <h1 className="preset-2 text-neutral-900">Mediterranean Chickpea Salad</h1>
-            <p className="preset-6">A refreshing, protein-packed salad tossed in a lemon-olive oil dressing.</p>
-        </div>
-        <CookingStats />
-        <Ingredients />
-        <Instructions />
-    </div>
-}
-function Ingredients() {
+// function RecipeInfo({ title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions }) {
+function RecipeInfo() {
+    const instructions = [
+        "In a large bowl combine chickpeas, cucumber, tomatoes, bell pepper, red onion and parsley.",
+        "Drizzle with olive oil and lemon juice.",
+        "Season with salt and pepper; toss to coat.",
+        "Serve immediately or chill up to 2 days.",
+    ];
     const ingredients = [
         "1 can (400 g) chickpeas, drained & rinsed",
         "1 small cucumber, diced",
@@ -105,14 +76,15 @@ function Ingredients() {
         "1 Tbsp fresh lemon juice",
         "Sea salt & black pepper to taste",
     ];
-    return <div>
-        <h2>Ingredients:</h2>
-        <ul>{ingredients.map((ingredient, i) => <Ingredient ingredient={ingredient} />)}</ul>
+    return <div className="flex flex-col gap-5">
+
+        <h1 className="preset-2 text-neutral-900">Mediterranean Chickpea Salad</h1>
+        <p className="preset-6">A refreshing, protein-packed salad tossed in a lemon-olive oil dressing.</p>
+
+        <CookingStats />
+        <List listTitle="Ingredients" items={ingredients} />
+        <List listTitle="Instructions" items={instructions} />
     </div>
 }
-function Ingredient({ ingredient }: { ingredient: string; }) {
-    return <li>{ingredient}</li>
-}
-function Instructions() {
-    return <div>Instructions</div>
-}
+
+

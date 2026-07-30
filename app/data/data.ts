@@ -1,4 +1,6 @@
-export const recipes = [
+import { Recipe } from "../types/types.type";
+
+export const recipes: Recipe[] = [
   {
     id: 1,
     title: "Mediterranean Chickpea Salad",

@@ -1,20 +1,13 @@
 import Image from "next/image"
 import Button from "../ui/Button"
 import { RecipeDetails } from "./RecipeDetails";
-type RecipeItem = {
-    title: string;
-    overview: string;
-    image: object;
-}
-type ImagePaths = {
-    large: string;
-    small: string;
-}
-export default function RecipeItem({ title, overview, image }: RecipeItem) {
-    return <div className="p-2 w-full bg-neutral-0 rounded-[10px] flex flex-col">
+import { ImagePaths, RecipeBasic } from "../types/types.type";
 
+export default function RecipeItem({ title, overview, image, servings, prepMinutes, cookMinutes }: RecipeBasic) {
+    //TODO: Make this a link to a different page
+    return <div className="p-2 w-full bg-neutral-0 rounded-[10px] flex flex-col border border-neutral-300 shadow-[0px_8px_16px_-9px_rgba(22,58,52,0.16)]">
         <RecipeImage image={image} />
-        <RecipeDetails title={title} overview={overview} />
+        <RecipeDetails title={title} overview={overview} servings={servings} prepMinutes={prepMinutes} cookMinutes={cookMinutes} />
         <Button text="View recipe" className="outline-0 offset-0 rounded-full w-full" />
     </div>
 }

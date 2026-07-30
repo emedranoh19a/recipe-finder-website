@@ -1,18 +1,22 @@
 import IconSecondary from "../ui/IconSecondary";
 
-type CookingDetailProps = {
+type CookingStatProps = {
     name: "servings" | "prep" | "cook";
     value: number;
 }
-
-export function CookingStats() {
+type CookingStatsProps = {
+    servings: number;
+    prepMinutes: number;
+    cookMinutes: number;
+}
+export function CookingStats({ servings, prepMinutes, cookMinutes }: CookingStatsProps) {
     return <div className="flex flex-wrap gap-x-4 gap-y-2">
-        <CookingStat name="servings" value={5} />
-        <CookingStat name="prep" value={5} />
-        <CookingStat name="cook" value={5} />
+        <CookingStat name="servings" value={servings} />
+        <CookingStat name="prep" value={prepMinutes} />
+        <CookingStat name="cook" value={cookMinutes} />
     </div>
 }
-function CookingStat({ name, value }: CookingDetailProps) {
+function CookingStat({ name, value }: CookingStatProps) {
     //TODO: Primero lo primero, 
     //TODO: Mostrar min en aso de que el vlaor de los minutos sea singular.
     const iconName = name === "servings" ? "user" : name === "prep" ? "timer" : "food"

@@ -1,10 +1,19 @@
 import { CookingStats } from "./CookingStats";
 
-export function RecipeDetails({ title, overview }: { title: string; overview: string }) {
-    return <div className="flex-1">
+type RecipeDetailsProps = {
+    title: string;
+    overview: string;
+    servings: number;
+    prepMinutes: number;
+    cookMinutes: number;
+}
+export function RecipeDetails({ title, overview, servings, prepMinutes, cookMinutes }: RecipeDetailsProps) {
 
+    const cookingStatsProps = { servings, prepMinutes, cookMinutes };
+
+    return <div className="flex-1 mb-4">
         <h3 className="preset-5 text-neutral-900 mb-2.5">{title}</h3>
         <p className="preset-9 mb-4">{overview}</p>
-        <CookingStats />
+        <CookingStats {...cookingStatsProps} />
     </div>
 }
