@@ -5,6 +5,7 @@ export type ImagePaths = {
 export type RecipeBasic = {
   id: number;
   title: string;
+  slug: string;
   image: ImagePaths;
   overview: string;
   servings: number;
@@ -13,7 +14,6 @@ export type RecipeBasic = {
 };
 
 export type Recipe = RecipeBasic & {
-  slug: string;
   ingredients: string[];
   instructions: string[];
 };

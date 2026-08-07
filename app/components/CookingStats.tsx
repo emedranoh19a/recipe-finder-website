@@ -17,13 +17,12 @@ export function CookingStats({ servings, prepMinutes, cookMinutes }: CookingStat
     </div>
 }
 function CookingStat({ name, value }: CookingStatProps) {
-    //TODO: Primero lo primero, 
     //TODO: Mostrar min en aso de que el vlaor de los minutos sea singular.
     const iconName = name === "servings" ? "user" : name === "prep" ? "timer" : "food"
-    return <div className="flex gap-1.5 items-center">
+    return <div className="flex gap-1.5 items-center capitalize">
         <IconSecondary name={iconName} />
-        <span>
-            {`${name}: ${value} ${name === "prep" ? "mins" : "mins"}`}
+        <span className="">
+            {`${name}: ${value} ${name === "servings" ? "" : "mins"}`}
         </span >
     </div>
 }
