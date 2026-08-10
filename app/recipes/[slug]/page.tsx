@@ -1,5 +1,3 @@
-//TODO: Make the general markup
-
 import Image from "next/image"
 import MoreRecipes from "./components/MoreRecipes"
 import { CookingStats } from "../../components/CookingStats"
@@ -7,29 +5,27 @@ import List from "@/app/components/List"
 import { notFound } from "next/navigation"
 import { recipes } from "@/app/data/data"
 import { ImagePaths, Recipe } from "@/app/types/types.type"
+import Breadcrumb from "./components/Breadcrumb"
 
-//TODO: Make the page dynamic with Supabase data.
-
-
-type PageProps = {
+export type RecipePageProps = {
     params: Promise<{ slug: string }>;
 };
-export default async function Page({ params }: PageProps) {
+
+export default async function Page({ params }: RecipePageProps) {
 
     //extract slug and find recipe data.
     const { slug } = await params;
     const recipe: Recipe = recipes
-        .find((recipe) => recipe.slug === slug)
+        .find((recipe) => recipe.slug === slug);
     //Then, extract id and calculate other things.
 
     const { id: recipeId, image, title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions } = recipe;
-    console.log("slug")
-    console.log(slug)
     if (!recipe) {
         notFound();
     }
 
-    return <>
+    return <div className="w-full flex-1 py-12 lg:pb-24">
+        <Breadcrumb recipeTitle={title} />
         <div className="mb-24 lg:mb-32 flex flex-col lg:flex-row items-start gap-10">
             <RecipeImage image={image} alt={title} />
             <RecipeInfo
@@ -43,7 +39,7 @@ export default async function Page({ params }: PageProps) {
             />
         </div>
         <MoreRecipes currentId={recipeId} total={recipes.length} />
-    </>
+    </div>
 }
 
 type RecipeImageProps = {
@@ -68,9 +64,8 @@ type RecipeInfoProps = {
     ingredients: string[];
     instructions: string[];
 }
+
 function RecipeInfo({ title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions }: RecipeInfoProps) {
-
-
     return <div className="flex flex-col gap-5">
         <h1 className="preset-2 text-neutral-900">{title}</h1>
         <p className="preset-6">{overview}</p>

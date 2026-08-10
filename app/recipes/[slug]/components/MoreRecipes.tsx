@@ -7,9 +7,6 @@ type MoreRecipesProps = {
     total: number;
 }
 export default function MoreRecipes({ currentId, total }: MoreRecipesProps) {
-
-
-    //TODO: :sustituir current index con un state
     const nextIndexes = [
         (currentId % total) + 1,
         ((currentId + 1) % total) + 1,
@@ -23,7 +20,6 @@ export default function MoreRecipes({ currentId, total }: MoreRecipesProps) {
         .map((nextIndex) => recipes.find((item) => item.id === nextIndex))
         .filter((recipe): recipe is Recipe => recipe !== undefined);
 
-    console.log(nextRecipes)
     return <div className="">
         <h2 className="mb-6 preset-3 text-neutral-900"> More recipes</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

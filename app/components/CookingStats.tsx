@@ -17,7 +17,6 @@ export function CookingStats({ servings, prepMinutes, cookMinutes }: CookingStat
     </div>
 }
 function CookingStat({ name, value }: CookingStatProps) {
-    //TODO: Mostrar min en aso de que el vlaor de los minutos sea singular.
     const iconName = name === "servings" ? "user" : name === "prep" ? "timer" : "food"
     return <div className="flex gap-1.5 items-center capitalize">
         <IconSecondary name={iconName} />
