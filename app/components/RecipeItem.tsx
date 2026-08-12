@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image"
-import Button from "../ui/Button"
 import { RecipeDetails } from "./RecipeDetails";
 import { ImagePaths, RecipeBasic } from "../types/types.type";
 import { useRouter } from "next/navigation";
+import Button from "./ui/Button";
 
 export default function RecipeItem({ title, overview, image, servings, prepMinutes, cookMinutes, slug }: RecipeBasic) {
     const router = useRouter();

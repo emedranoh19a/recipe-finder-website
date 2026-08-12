@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Button from "../ui/Button";
-import Line1 from "../ui/Ornamentals/Line1"
+import Line1 from "../components/ui/Ornamentals/Line1";
+import Button from "../components/ui/Button";
+
 
 export default function Hero() {
   return (

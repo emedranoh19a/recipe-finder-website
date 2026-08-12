@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../ui/Button";
+import Button from "../components/ui/Button";
 
 export default function CTA() {
     return <section id="cta" className="text-center w-full pt-16 sm:pt-20 lg:pt-0">

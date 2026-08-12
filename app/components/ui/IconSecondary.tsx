@@ -1,5 +1,5 @@
+import { cn } from "@/app/utils/utils";
 import Image from "next/image";
-import { cn } from "../utils/utils";
 
 type IconSecondaryProps = {
   className?: string;

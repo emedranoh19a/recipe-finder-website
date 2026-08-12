@@ -1,5 +1,5 @@
-import IconSecondary from "../ui/IconSecondary";
 import { cn } from "../utils/utils";
+import IconSecondary from "./ui/IconSecondary";
 
 export default function Footer() {
   const footerCn = cn(

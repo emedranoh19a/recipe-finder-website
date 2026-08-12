@@ -1,4 +1,4 @@
-import IconSecondary from "../ui/IconSecondary";
+import IconSecondary from "./ui/IconSecondary";
 
 type CookingStatProps = {
     name: "servings" | "prep" | "cook";

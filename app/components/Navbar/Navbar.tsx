@@ -1,6 +1,7 @@
-import Button from "../../ui/Button";
-import Logo from "../../ui/Logo";
+
 import { cn } from "../../utils/utils";
+import Button from "../ui/Button";
+import Logo from "../ui/Logo";
 import DesktopNavbarLinks from "./DesktopNavbarLinks";
 import HamburgerMenu from "./HamburgerMenu";
 

@@ -1,4 +1,4 @@
-import IconSecondary from "@/app/ui/IconSecondary";
+import IconSecondary from "../ui/IconSecondary";
 
 type HamburgerMenuProps = { isOpen: boolean; onClick: () => void }
 export default function HamburgerMenu({ isOpen, onClick }: HamburgerMenuProps) {

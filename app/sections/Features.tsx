@@ -1,4 +1,4 @@
-import IconPrimary from "../ui/IconPrimary";
+import IconPrimary from "../components/ui/IconPrimary";
 
 type FeatureProps = {
   title: string;

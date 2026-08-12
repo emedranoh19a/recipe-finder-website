@@ -1,5 +1,5 @@
+import { cn } from "@/app/utils/utils";
 import Image from "next/image";
-import { cn } from "../utils/utils";
 
 type IconPrimaryProps = {
   name: "flash" | "carrots" | "search-menu";
@@ -14,9 +14,9 @@ export default function IconPrimary({ name, className }: IconPrimaryProps) {
   );
   const iconCn = cn(
     "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-    name==="carrots"&&"w-[23.2px] h-[32.12px]",
-    name==="flash"&&"w-[40px] h-[41.67px]",
-    name==="search-menu"&&"w-10 aspect-square",
+    name === "carrots" && "w-[23.2px] h-[32.12px]",
+    name === "flash" && "w-[40px] h-[41.67px]",
+    name === "search-menu" && "w-10 aspect-square",
   );
 
   const iconSrc =

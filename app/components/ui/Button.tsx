@@ -1,6 +1,5 @@
+import { cn } from "@/app/utils/utils";
 import { ComponentProps } from "react";
-import { cn } from "../utils/utils"
-
 
 type ButtonProps = ComponentProps<"button"> & {
     text: string;

@@ -1,4 +1,4 @@
-import IconSecondary from "@/app/ui/IconSecondary";
+import IconSecondary from "@/app/components/ui/IconSecondary";
 import { ReactNode } from "react";
 type FeatureBlockProps = { title: string; children: ReactNode }
 

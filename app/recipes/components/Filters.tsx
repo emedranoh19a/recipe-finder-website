@@ -1,6 +1,22 @@
-export default function Filters() {
-    return <div> Max Prep Time
-        Max Cook Time
+import SelectButton from "@/app/components/ui/SelectButton";
 
-        Search by name or ingredient...</div>
+export default function Filters() {
+    return <div>
+
+        Max Prep Time
+        <br />
+        <SelectButton />
+        <br />
+        <br />
+        Max Cook Time
+        <br />
+        <SelectButton />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        Search by name or ingredient...
+    </div>
 }
