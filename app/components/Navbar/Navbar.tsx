@@ -1,4 +1,6 @@
+"use client"
 
+import { useRouter } from "next/navigation";
 import { cn } from "../../utils/utils";
 import Button from "../ui/Button";
 import Logo from "../ui/Logo";
@@ -7,6 +9,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 
 export default function Navbar() {
+  const router = useRouter();
   const containerCn = cn(
     "sticky top-0 bg-neutral-100 w-full z-10",
     "border-b border-neutral-300",
@@ -21,7 +24,11 @@ export default function Navbar() {
         <Logo />
         <DesktopNavbarLinks />
         <HamburgerMenu />
-        <Button text="Browse recipes" className="whitespace-nowrap hidden lg:inline-block" />
+        <Button
+          text="Browse recipes"
+          className="whitespace-nowrap hidden lg:inline-block"
+          onClick={() => router.push("/recipes")}
+        />
       </div>
     </nav>
   );

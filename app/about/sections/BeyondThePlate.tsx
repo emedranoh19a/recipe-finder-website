@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function BeyondThePlate() {
     return <section className="relative preset-6 items-center grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 py-12 sm:py-20 lg:py-24">
-        <hr className="w-screen absolute left-1/2 translate-x-[-50vw] text-neutral-300" />
+        <hr className="w-screen absolute top-0 left-1/2 translate-x-[-50vw] text-neutral-300" />
 
         <Content />
         <Illustration />

@@ -6,7 +6,7 @@ const maxCookTimeValues = [0, 5, 10, 15, 20]
 
 type FiltersProps = {
     filters: FilterValues,
-    updateFilter: (key: keyof FilterValues, value: number | null) => void
+    updateFilter: <K extends keyof FilterValues>(key: K, value: FilterValues[K]) => void;
 }
 
 export default function Filters({ filters, updateFilter }: FiltersProps) {
@@ -29,6 +29,10 @@ export default function Filters({ filters, updateFilter }: FiltersProps) {
                 setFilter={(v) => updateFilter("maxCookTime", v)}
             />
         </div>
-        <SearchBar className="flex-1 lg:flex-0" />
+        <SearchBar
+            className="flex-1 lg:flex-0"
+            value={filters.search}
+            onChange={(e) => updateFilter("search", e.target.value)}
+        />
     </div>
 }

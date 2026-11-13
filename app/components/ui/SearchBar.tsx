@@ -11,7 +11,7 @@ export default function SearchBar({
     "flex gap-2 items-center",
     "border border-neutral-300 rounded-[10px]",
     "transition hover:cursor-pointer hover:border-neutral-600",
-    "focus-within:ring-2 focus-within:ring-neutral-900 focus-within:ring-offset-2 focus-whithin:hover:border-neutral-600/0",
+    "focus-within:ring-2 focus-within:ring-neutral-900 focus-within:ring-offset-2 focus-within:hover:border-neutral-600/0",
     className
   );
 

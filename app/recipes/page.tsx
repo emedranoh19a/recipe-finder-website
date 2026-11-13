@@ -7,10 +7,12 @@ import Recipes from "./components/Recipes";
 export type FilterValues = {
     maxPrepTime: null | number;
     maxCookTime: null | number;
+    search: string;
 }
 const initialFilterValues = {
     maxPrepTime: null,
     maxCookTime: null,
+    search: ""
 }
 
 export default function Page() {
@@ -18,7 +20,7 @@ export default function Page() {
 
     // Logic
     // Note: one small setter that updates a single key
-    function updateFilter(key: keyof FilterValues, value: number | null) {
+    function updateFilter<K extends keyof FilterValues>(key: K, value: FilterValues[K]) {
         setFilters((prev) => ({ ...prev, [key]: value }));
     }
 
