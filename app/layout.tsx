@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
 import "./globals.css";
 import { nunito, nunitoSans } from "./styles/fonts";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer"
+import { ReactNode } from "react";
 
-export default function Layout({ children }: { children: ReactElement }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html>
       <body
