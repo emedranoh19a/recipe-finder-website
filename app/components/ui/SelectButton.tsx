@@ -13,11 +13,9 @@ type SelectButtonProps = {
     activeFilter: number | null;
     setFilter: (n: number | null) => void;
 }
-// TODO: Selected styles : the same as hover state.
-//TODO: Search bar. with styles
 export default function SelectButton({ label, name, className, values, activeFilter, setFilter }: SelectButtonProps) {
     const [open, setOpen] = useState<boolean>(false)
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
     useClickOutside(ref, () => setOpen(false))
     const selected = false;
 

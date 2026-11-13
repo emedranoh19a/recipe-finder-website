@@ -1,10 +1,17 @@
+// Note: put this in the same file, above or below Page
+export function generateStaticParams() {
+    return recipes.map((recipe) => ({ slug: recipe.slug }));
+}
+
+export const dynamicParams = false; // Note: any other slug -> 404
+
 import Image from "next/image"
 import MoreRecipes from "./components/MoreRecipes"
 import { CookingStats } from "../../components/CookingStats"
 import List from "@/app/components/List"
 import { notFound } from "next/navigation"
 import { recipes } from "@/app/data/data"
-import { ImagePaths, Recipe } from "@/app/types/types.type"
+import { ImagePaths } from "@/app/types/types.type"
 import Breadcrumb from "./components/Breadcrumb"
 
 export type RecipePageProps = {
@@ -15,14 +22,14 @@ export default async function Page({ params }: RecipePageProps) {
 
     //extract slug and find recipe data.
     const { slug } = await params;
-    const recipe: Recipe = recipes
-        .find((recipe) => recipe.slug === slug);
-    //Then, extract id and calculate other things.
+    const recipe = recipes.find((r) => r.slug === slug);
 
-    const { id: recipeId, image, title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions } = recipe;
+    //Then, extract id and calculate other things.
     if (!recipe) {
         notFound();
     }
+    const { id: recipeId, image, title, overview, servings, prepMinutes, cookMinutes, ingredients, instructions } = recipe;
+
 
     return <div className="w-full flex-1 py-12 lg:pb-24">
         <Breadcrumb recipeTitle={title} />
