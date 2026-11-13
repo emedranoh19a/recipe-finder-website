@@ -1,22 +1,34 @@
+import SearchBar from "@/app/components/ui/SearchBar";
 import SelectButton from "@/app/components/ui/SelectButton";
+import { FilterValues } from "../page";
+const maxPrepTimeValues = [0, 5, 10]
+const maxCookTimeValues = [0, 5, 10, 15, 20]
 
-export default function Filters() {
-    return <div>
+type FiltersProps = {
+    filters: FilterValues,
+    updateFilter: (key: keyof FilterValues, value: number | null) => void
+}
 
-        Max Prep Time
-        <br />
-        <SelectButton />
-        <br />
-        <br />
-        Max Cook Time
-        <br />
-        <SelectButton />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        Search by name or ingredient...
+export default function Filters({ filters, updateFilter }: FiltersProps) {
+    return <div className="mb-6 z-10 flex flex-col md:flex-row sm:justify-between gap-3">
+        <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+            <SelectButton
+                name="prepTime"
+                label="Max Prep Time"
+                className="w-full md:w-fit"
+                values={maxPrepTimeValues}
+                activeFilter={filters.maxPrepTime}
+                setFilter={(v) => updateFilter("maxPrepTime", v)}
+            />
+            <SelectButton
+                name="cookTime"
+                label="Max Cook Time"
+                className="w-full md:w-fit"
+                values={maxCookTimeValues}
+                activeFilter={filters.maxCookTime}
+                setFilter={(v) => updateFilter("maxCookTime", v)}
+            />
+        </div>
+        <SearchBar className="flex-1 lg:flex-0" />
     </div>
 }

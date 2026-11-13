@@ -1,7 +1,14 @@
-import { cn } from "../utils/utils";
+import { cn } from "@/app/utils/utils";
 
-export default function Checkbox() {
-//TODO: add react hook form.
+type CheckboxProps = {
+  optionName: string;
+  value: number;
+  checked: boolean;
+  onChange: (value: number) => void;
+}
+
+
+export default function Checkbox({ optionName, value, checked, onChange }: CheckboxProps) {
   const inputCn = cn(
     "relative appearance-none w-4 aspect-square inline-block",
     "rounded-full border-1 border-neutral-400",
@@ -14,5 +21,16 @@ export default function Checkbox() {
     //ring on focus
     "focus:ring-4 focus:ring-neutral-400/25 focus:outline-none",
   );
-  return <input type="checkbox" className={inputCn} />;
+  return <li>
+    <label className="flex flex-row gap-2 items-center p-2 cursor-pointer">
+      <input
+        type="radio"
+        name={optionName}
+        className={inputCn}
+        checked={checked}
+        onChange={() => onChange(value)}
+      />
+      <span className="preset-7"> {value} minutes</span>
+    </label>
+  </li>
 }

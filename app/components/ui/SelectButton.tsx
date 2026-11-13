@@ -1,12 +1,33 @@
 "use client"
 import { cn } from "@/app/utils/utils"
 import IconSecondary from "./IconSecondary"
+import Checkbox from "./Checkbox";
+import { useRef, useState } from "react";
+import { useClickOutside } from "@/app/hooks/useOnClickOutside";
 
-export default function SelectButton() {
-    //TODO: Implement a select button with options and styling
-
+type SelectButtonProps = {
+    name: string,
+    label: string;
+    className?: string,
+    values: number[]
+    activeFilter: number | null;
+    setFilter: (n: number | null) => void;
+}
+// TODO: Selected styles : the same as hover state.
+//TODO: Search bar. with styles
+export default function SelectButton({ label, name, className, values, activeFilter, setFilter }: SelectButtonProps) {
+    const [open, setOpen] = useState<boolean>(false)
+    const ref = useRef(null);
+    useClickOutside(ref, () => setOpen(false))
     const selected = false;
-    const buttonCn = cn("capitalize",
+
+    //Style:
+    const containerStyles = cn(
+        "preset-7 text-neutral-900 relative",
+        className)
+
+    const buttonCn = cn(
+        "capitalize w-full",
         "py-2.5 px-4 ",
         "bg-neutral-0 transition-colors  cursor-pointer",
         "border-2 rounded-[10px] border-neutral-300 hover:border-neutral-900",
@@ -14,49 +35,56 @@ export default function SelectButton() {
         "outline-0 focus:outline-2 outline-offset-0 focus:outline-offset-2",
         selected && "border-neutral-900",
         "flex gap-2 items-center transition")
-    const pickerCn = cn("flex flex-col");
 
-    return <div className="preset-7 text-neutral-900 relative block">
-        <button className={buttonCn}>
+    function onToggleOpen() {
+        return setOpen((s) => !s)
+    }
+    // Logic
+    function onPick(value: number | null) {
+        setFilter(value);
+        setOpen(false); // optional: close after choosing
+    }
+    return <div ref={ref} className={containerStyles}>
+        <button
+            onClick={onToggleOpen}
+            className={buttonCn}
+            style={{ anchorName: `--select-${name}` }}
+        >
             <span>
-                Max Cook Time
+                {label}
             </span>
             <IconSecondary name="down" />
         </button>
-        <div className={pickerCn}>
-            <Option />
-            <Option />
-            <Option />
-            <Option />
-            <Option />
-            <button > Clear</button>
-        </div>
-        {/* 
-
-        <div role="radiogroup" className="absolute ...">
-            {[0, 5, 10, 15, 20].map((time) => (
-                <label key={time} className="flex items-center gap-2">
-                    <input
-                        type="radio"
-                        name="cookTime"
-                    // checked={cookTime === time}
-                    // onChange={() => setCookTime(time)}
-                    />
-                    {time} minutes
-                </label>
-            ))}
-            <button>Clear</button>
-        </div> */
-        }
-
-
-    </div >
+        {open && <SelectMenu
+            name={name}
+            values={values}
+            activeFilter={activeFilter}
+            onPick={onPick}
+        />}
+    </div>
 }
-function Option() {
-    return <label>
-        {/* TODO: onChange */}
-        {/* TODO: checked */}
-        <input type="radio" name="coookTime" />
-        20 minutes
-    </label>
+
+type SelectMenuProps = {
+    name: string;
+    values: number[];
+    activeFilter: number | null;
+    onPick: (n: number | null) => void;
+}
+function SelectMenu({ name, values, activeFilter, onPick }: SelectMenuProps) {
+    const pickerCn = cn("absolute mt-2 top-full z-10 flex flex-col list-none p-2 bg-neutral-0 w-full max-w-[240px]  border-2 border-neutral-300 rounded-lg");
+
+    return <div className={pickerCn} style={{ positionAnchor: `--select-${name}`, positionArea: "bottom" }}>
+        <fieldset>
+            <ul>
+                {values.map((value, i) => <Checkbox
+                    key={i}
+                    optionName={name}
+                    value={value}
+                    checked={activeFilter === value}
+                    onChange={() => onPick(value)}
+                />)}
+            </ul>
+        </fieldset>
+        <button onClick={() => onPick(null)} className="cursor-pointer text-left pl-2"> Clear</button>
+    </div>
 }

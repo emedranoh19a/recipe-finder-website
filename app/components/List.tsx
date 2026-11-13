@@ -1,4 +1,4 @@
-import IconSecondary from "../ui/IconSecondary";
+import IconSecondary from "./ui/IconSecondary";
 
 type ListProps = { listTitle: string, items: string[] }
 type ListItemProps = { item: string; }

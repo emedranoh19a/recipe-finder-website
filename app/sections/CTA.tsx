@@ -1,12 +1,15 @@
+"use client"
 import Image from "next/image";
 import Button from "../components/ui/Button";
+import { useRouter } from "next/navigation";
 
 export default function CTA() {
+    const router = useRouter();
     return <section id="cta" className="text-center w-full pt-16 sm:pt-20 lg:pt-0">
         <div className="relative z-0 overflow-hidden bg-neutral-200 rounded-2xl py-12 sm:py-20 px-4 w-full">
             <h1 className="preset-2 text-neutral-900 mb-3">Ready to cook smarter?</h1>
             <p className="preset-6 mb-8 sm:mb-10">Hit the button, pick a recipe, and get dinner on the table—fast.</p>
-            <Button text="Browse recipes" />
+            <Button text="Browse recipes" onClick={() => router.push("/recipes")} />
             <Ornamentals />
         </div>
     </section>;

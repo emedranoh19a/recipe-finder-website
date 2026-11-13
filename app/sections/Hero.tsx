@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import Line1 from "../components/ui/Ornamentals/Line1";
 import Button from "../components/ui/Button";
+import { useRouter } from "next/navigation";
 
 
 export default function Hero() {
@@ -14,8 +16,9 @@ export default function Hero() {
 }
 
 function HeroContent() {
+  const router = useRouter();
   return (
-    <div className="max-w-[805px] lg:text-center mx-auto">
+    <div className="max-w-201.25 lg:text-center mx-auto">
       <h1 className="preset-1 text-neutral-900 mb-4 lg:mb-3">
         {" "}
         <span className="relative z-0 before:bg-orange-400/35 before:w-full before:h-full before:absolute before:scale-y-50 before:scale-x-105 before:-z-10 before:translate-y-2 before:rounded-2xl">Healthy</span>   {" "}
@@ -25,14 +28,14 @@ function HeroContent() {
         Discover eight quick, whole-food recipes that you can cook tonight—no
         processed junk, no guesswork.
       </p>
-      <Button text="Start exploring" />
+      <Button text="Start exploring" onClick={() => router.push("/recipes")} />
     </div>
   );
 }
 
 function HeroImage() {
   return (
-    <div className="relative w-full outline-2 sm:outline-4 lg:outline-8 outline-neutral-0 h-50 sm:h-[350px] lg:h-[530px] rounded-lg overflow-hidden">
+    <div className="relative w-full outline-2 sm:outline-4 lg:outline-8 outline-neutral-0 h-50 sm:h-87.5 lg:h-132.5 rounded-lg overflow-hidden">
       <Image
         fill
         className="object-cover"

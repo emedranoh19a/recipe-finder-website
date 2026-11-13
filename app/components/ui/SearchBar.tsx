@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
-import { cn } from "../utils/utils";
 import IconSecondary from "./IconSecondary";
+import { cn } from "@/app/utils/utils";
 
 export default function SearchBar({
   className,
@@ -11,7 +11,8 @@ export default function SearchBar({
     "flex gap-2 items-center",
     "border border-neutral-300 rounded-[10px]",
     "transition hover:cursor-pointer hover:border-neutral-600",
-    "focus-within:ring-2 focus-within:ring-neutral-900 focus-within:ring-offset-2 focus-whithin:hover:border-neutral-600/0"
+    "focus-within:ring-2 focus-within:ring-neutral-900 focus-within:ring-offset-2 focus-whithin:hover:border-neutral-600/0",
+    className
   );
 
   const inputCn = cn(
@@ -19,7 +20,6 @@ export default function SearchBar({
     "peer preset-7 cursor-pointer",
     "text-neutral-900 placeholder:text-neutral-900/70",
     "outline-none ",
-    className,
   );
 
   return (
